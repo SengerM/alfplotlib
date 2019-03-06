@@ -3,7 +3,9 @@ import os
 import datetime
 from time import sleep
 
-plt.style.use('alfrc_style')
+__alfplotlib_installation_path = os.path.dirname(os.path.abspath(__file__))
+
+plt.style.use(__alfplotlib_installation_path + '/' + 'alfrc_style')
 
 def __gen_timestamp():
 	"""
