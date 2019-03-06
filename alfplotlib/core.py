@@ -5,7 +5,7 @@ from time import sleep
 
 __alfplotlib_installation_path = os.path.dirname(os.path.abspath(__file__))
 
-plt.style.use(__alfplotlib_installation_path + '/' + 'alfrc_style')
+plt.style.use(__alfplotlib_installation_path + '/alfplotlib/' + 'alfrc_style')
 
 def __gen_timestamp():
 	"""
