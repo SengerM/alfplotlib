@@ -18,7 +18,7 @@ setuptools.setup(
 		"License :: OSI Approved :: MIT License",
 		"Operating System :: OS Independent",
 	],
-	# ~ package_data = {
-		# ~ '': ['figure_styles/*']
-	# ~ }
+	package_data = {
+		'': ['alfrc_style']
+	}
 )
