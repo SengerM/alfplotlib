@@ -35,20 +35,24 @@ def save_all_figs(timestamp=False, mkdir=None, image_format='png', *args, **kwar
 	
 	Arguments
 	---------
-	timestamp : bool or str, optional
+	timestamp : bool, optional 
+		Default: False
 		If true then all file names will be identified with one (and the
-		same) timestamp.
-		If 'now' then the timestamp is generated at the time you call the
-		save_all function.
+		same) timestamp. The timestamp is created at the moment this 
+		function is called. If you call this function twice, you'll have 
+		two different timestamps.
 		This is usefull when you want not to overwrite the plots each 
-		time you run your code.
-		Default value is False.
+		time you run your code. Let's say you are doing a simulation and you
+		want to keep the plots of each different run, then you can use
+		"timestamp = True".
 	mkdir : str or None, optional
+		Default: None
 		If a string is passed then a directory will be created (with the
 		specified name) and all figures will be saved in there. If None,
 		all figures will be saved in the current working directory.
 		Default value is 'figures'.
 	image_format : string, optional
+		Default: 'png'
 		Format of image files. Default is 'png'. 
 	"""
 	if mkdir is not None:
