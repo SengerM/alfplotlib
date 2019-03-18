@@ -58,7 +58,7 @@ def save_all_figs(timestamp=False, mkdir=None, format='png', *args, **kwargs):
 	if mkdir is not None:
 		directory = mkdir + '/'
 	else:
-		directory = '.'
+		directory = './'
 	if timestamp is True:
 		directory += __gen_timestamp()
 	if not os.path.exists(directory):
