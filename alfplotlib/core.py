@@ -65,5 +65,7 @@ def save_all_figs(timestamp=False, mkdir=None, image_format='png', *args, **kwar
 		os.makedirs(directory)
 	figs_list = [plt.figure(n) for n in plt.get_fignums()]
 	for k in range(len(figs_list)):
+		for ax in figs_list[k].axes:
+			ax.grid(b=True, which='minor', color='#000000', alpha=0.1, linestyle='-', linewidth=0.25)
 		file_name = figs_list[k].canvas.manager.window.wm_title()
 		figs_list[k].savefig(directory + '/' + file_name + '.' + image_format, *args, **kwargs)
