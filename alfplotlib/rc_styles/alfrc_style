@@ -435,7 +435,7 @@ grid.alpha       :   0.1       # transparency, between 0.0 and 1.0
 #figure.titlesize : large      # size of the figure title (Figure.suptitle())
 #figure.titleweight : normal   # weight of the figure title
 figure.figsize   : 5.511811, 2.7559055   # figure size in inches
-#figure.dpi       : 100      # figure dots per inch
+figure.dpi       : 200      # figure dots per inch
 #figure.facecolor : white   # figure facecolor; 0.75 is scalar gray
 #figure.edgecolor : white   # figure edgecolor
 figure.autolayout : True  # When True, automatically adjust subplot
@@ -513,7 +513,7 @@ figure.autolayout : True  # When True, automatically adjust subplot
 # the default savefig params can be different from the display params
 # e.g., you may want a higher resolution, or to make the figure
 # background white
-savefig.dpi          : 200   # figure dots per inch or 'figure'
+#savefig.dpi         : figure   # figure dots per inch or 'figure'
 #savefig.facecolor   : white    # figure facecolor when saving
 #savefig.edgecolor   : white    # figure edgecolor when saving
 #savefig.format      : png      # png, ps, pdf, svg
