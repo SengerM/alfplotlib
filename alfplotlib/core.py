@@ -29,7 +29,7 @@ def __gen_timestamp():
 	sleep(10e-6) # This ensures that there will not exist two equal timestamps.
 	return timestamp
 
-def save_all_figs(timestamp=False, mkdir=None, image_format='png', *args, **kwargs):
+def save_all_figs(timestamp=False, mkdir=None, format='png', *args, **kwargs):
 	"""
 	Use this function to save all plots in the current session at once.
 	
@@ -68,4 +68,4 @@ def save_all_figs(timestamp=False, mkdir=None, image_format='png', *args, **kwar
 		for ax in figs_list[k].axes:
 			ax.grid(b=True, which='minor', color='#000000', alpha=0.1, linestyle='-', linewidth=0.25)
 		file_name = figs_list[k].canvas.manager.window.wm_title()
-		figs_list[k].savefig(directory + '/' + file_name + '.' + image_format, *args, **kwargs)
+		figs_list[k].savefig(directory + '/' + file_name + '.' + format, format=format, *args, **kwargs)
