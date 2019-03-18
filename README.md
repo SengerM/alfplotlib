@@ -35,3 +35,8 @@ ax.plot(x,np.sin(2*np.pi*x))
 
 apl.save_all_figs(mkdir='my_figs') # Save all the figs at once.
 ```
+The default "alf style" looks like this:
+<p align="center">
+  <img width="460" src="https://github.com/SengerM/alfplotlib/blob/master/doc/usage_example/my_figs/Figure%201.png">
+</p>
+
