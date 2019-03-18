@@ -51,7 +51,7 @@ def save_all_figs(timestamp=False, mkdir=None, format='png', *args, **kwargs):
 		specified name) and all figures will be saved in there. If None,
 		all figures will be saved in the current working directory.
 		Default value is 'figures'.
-	image_format : string, optional
+	format : string, optional
 		Default: 'png'
 		Format of image files. Default is 'png'. 
 	"""
