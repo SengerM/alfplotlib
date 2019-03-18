@@ -42,8 +42,9 @@ The default "alf style" looks like this:
 The code used to generate the previous plot can be found [here](https://github.com/SengerM/alfplotlib/tree/master/doc/usage_example).
 
 #### The ```save_all_figs``` function
-Its name says it all. This function saves all the plots you have made in the current session. You can find the source code and documentation in [this link](https://github.com/SengerM/alfplotlib/blob/master/alfplotlib/core.py).
-- ```save_all_figs``` example 1. Just save all your plots:
+Its name says it all. This function saves all the plots you have made in the current session. You can find the source code and documentation in [this link](https://github.com/SengerM/alfplotlib/blob/master/alfplotlib/core.py). You can use most of the [```savefig```](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html) arguments with this function. For example ```apl.save_all_figs(format='pdf')``` will save the imaged in pdf format.
+
+- ```save_all_figs``` example 1. Just save all your plots at once!
 ```Python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -55,11 +56,19 @@ for k in range(10):
 
 apl.save_all_figs() # Wow, you can save all the 10 figures that easy!?
 ```
-- ```save_all``` example 2. Use a timestamp in order to not override your old plots. If you request to ```save_all_figs``` the usage of a timestamp, then it will create a new directory with a unique timestamp and the figures will be saved there. If you run the script multiple times the plots saved each time in a new directory. Example code:
+- ```save_all_figs``` example 2. Use a timestamp in order to not overwrite your old plots. If you request to ```save_all_figs``` the usage of a timestamp, then it will create a new directory with a unique timestamp and the figures will be saved there. If you run the script multiple times the plots saved each time in a new directory. Example code:
 ```Python
-UNDER DEVELOPMENT
+import matplotlib.pyplot as plt
+import numpy as np
+import alfplotlib as apl
+
+for k in range(10):
+	fig, ax = plt.subplots()
+	ax.plot(np.linspace(-2,2)**k)
+
+apl.save_all_figs(timestamp=True) # Use the timestamp feature to not overwrite your images each time you save your plots.
 ```
-- ```save_all``` example 3. Use your custom directory:
+- ```save_all_figs``` example 3. Create a new directory on the fly:
 ```Python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -71,19 +80,7 @@ for k in range(10):
 
 apl.save_all_figs(mkdir="my_figures") # Automatically create a directory to save your figures.
 ```
-- ```save_all``` example 4. Save the plotted data as csv files:
+- ```save_all_figs``` example 4. Save the plotted data as csv files:
 ```Python
 IN THE WISH LIST
-```
-- ```save_all``` example 5. Change the default image format. You can use any of the formats specified [here](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html). Example code:
-```Python
-import matplotlib.pyplot as plt
-import numpy as np
-import alfplotlib as apl
-
-for k in range(10):
-	fig, ax = plt.subplots()
-	ax.plot(np.linspace(-2,2)**k)
-
-apl.save_all_figs(mkdir="my_figures", format='pdf')
 ```
