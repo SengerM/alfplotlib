@@ -42,7 +42,7 @@ The default "alf style" looks like this:
 The code used to generate the previous plot can be found [here](https://github.com/SengerM/alfplotlib/tree/master/doc/usage_example).
 
 #### The ```save_all_figs``` function
-Its name says it all. This function saves all the plots you have made in the current session. You can find the source code and documentation in [this link](https://github.com/SengerM/alfplotlib/blob/master/alfplotlib/core.py). You can use most of the [```savefig```](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html) arguments with this function. For example ```apl.save_all_figs(format='pdf')``` will save the imaged in pdf format.
+Its name says it all. This function saves all the plots you have made in the current session. You can find the source code and documentation in [this link](https://github.com/SengerM/alfplotlib/blob/master/alfplotlib/core.py). You can use most of the matplotlib's [```savefig```](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html) arguments with this function. For example ```apl.save_all_figs(format='pdf')``` will save the images in pdf format.
 
 - ```save_all_figs``` example 1. Just save all your plots at once!
 ```Python
