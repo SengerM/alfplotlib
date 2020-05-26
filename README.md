@@ -85,14 +85,14 @@ apl.save_all_figs(mkdir="my_figures") # Automatically create a directory to save
 IN THE WISH LIST
 ```
 - ```save_all_figs``` example 5. Change the file names:
-The ```save_all_figs``` function uses the window title for the file, NOT THE FIGURE TITLE. Thus you have to use ```fig.canvas.set_window_title``` to define the file name for each figure. By default the window names are 'Figure 1', 'Figure 2', and so on. An example below:
+The ```save_all_figs``` function uses the figure name specified by the ```set_fig_name``` function. Thus you have to use ```apl.set_fig_name(fig, 'this name will be used for the file')``` to define the file name for each figure. If no name was provided a timestamp is generated at the moment of saving the plot. An example below:
 ```Python
 import matplotlib.pyplot as plt
 import alfplotlib as apl
-fig, ax = plt.subplots() # This figure will be saved with the default name, i.e. 'Figure 1'
+fig, ax = plt.subplots() # This figure will be saved with a timestamp
 ax.plot([1,2,3], [1,2,3])
 fig, ax = plt.subplots() # Open a new figure
-fig.canvas.set_window_title('i like this figure') # This figure will be saved with the specified window title
+apl.set_fig_name(fig, 'i like this figure') # This figure will be saved with this name
 ax.plot([1,2,3],[1,4,9])
 apl.save_all_figs()
 ```

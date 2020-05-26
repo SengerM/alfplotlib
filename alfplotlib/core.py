@@ -29,6 +29,13 @@ def __gen_timestamp():
 	sleep(10e-6) # This ensures that there will not exist two equal timestamps.
 	return timestamp
 
+def set_fig_name(fig, name):
+	"""
+	Use this function to set a name for each figure which will be used when
+	"save all figs" function is called.
+	"""
+	fig.set_label(name)
+
 def save_all_figs(timestamp=False, mkdir=None, format='png', facecolor=(1,1,1,0), *args, **kwargs):
 	"""
 	Use this function to save all plots in the current session at once.
@@ -67,5 +74,7 @@ def save_all_figs(timestamp=False, mkdir=None, format='png', facecolor=(1,1,1,0)
 	for k in range(len(figs_list)):
 		for ax in figs_list[k].axes:
 			ax.grid(b=True, which='minor', color='#000000', alpha=0.1, linestyle='-', linewidth=0.25)
-		file_name = figs_list[k].canvas.manager.window.wm_title()
+		file_name = figs_list[k].get_label()
+		if file_name == '':
+			file_name = __gen_timestamp()
 		figs_list[k].savefig(directory + '/' + file_name + '.' + format, format=format, facecolor=facecolor, *args, **kwargs)
